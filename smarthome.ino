@@ -66,7 +66,8 @@ void loop() {
   {
     dataMillis = millis();
     bool bVal;
-    Firebase.RTDB.getBool(&fbdo, F("light"), &bVal) ? bVal ? digitalWrite(led, HIGH) : digitalWrite(led, LOW) : fbdo.errorReason().c_str();
+    Firebase.RTDB.getBool(&fbdo, F("light"), &bVal);
+    Serial.print(&bVal);
     count++;
   }
 }
