@@ -1,6 +1,7 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
 import { getDatabase, ref, set, onValue } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js';
 
+
 setTimeout(() => {
   document.getElementById('loading').style.display = 'none';
 }, 2000);
@@ -15,6 +16,7 @@ const firebaseConfig = {
   appId: "1:658367806697:web:c866103d0ba4e2b2658478"
 }
 const app = initializeApp(firebaseConfig);
+
 
 const lightCheckbox = document.getElementById('light');
 const luminosityRange = document.getElementById('luminosity');
@@ -31,12 +33,13 @@ const windowUI = document.getElementById('windowUI');
 
 const database = getDatabase(app);
 
-const lightref = ref(database, 'light');
-const windowref = ref(database, 'window');
-const luminosityref = ref(database, 'luminosity');
-const gasref = ref(database, 'gas');
-const watersprayref = ref(database, 'waterspray');
-const lockref = ref(database, 'lock');
+const lightref = ref(database, 'data/light');
+const windowref = ref(database, 'data/window');
+const luminosityref = ref(database, 'data/luminosity');
+const gasref = ref(database, 'data/gas');
+const watersprayref = ref(database, 'data/waterspray');
+const lockref = ref(database, 'data/lock');
+console.log("Sucessfull connected")
 
 
 onValue(lightref, (snapshot) => {
