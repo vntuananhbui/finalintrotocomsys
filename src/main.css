@@ -116,7 +116,7 @@ input:checked + .slider:before {
 
 /* Range */
 .rangeSlider {
-  -webkit-appearance: none;
+  /* -webkit-appearance: none; */
   width: 150%;
   height: 15px;
   border-radius: 5px;  
