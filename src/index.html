@@ -98,7 +98,7 @@
               </div>
           </div>
         </div>
-        <div class="light-control">
+        <div class="light-control ">
             <div class="">
               <h2>Window</h2>
               <label id="switch" class="switch">
@@ -113,17 +113,17 @@
               <span id="lockUI" class="slider round"></span>
             </label>
           </div>
-          <div id="codeModal" class="modal">
-            <div class="modal-content">
-              <span class="close">&times;</span>
-              <p>Please enter the numeric code to lock/unlock the door:</p>
-              <form id="passwordForm">
-                <input type="password" id="codeInput" placeholder="Enter code">
-                <button type="submit" id="submitCode">Submit</button>
-              </form>
-            </div>
-          </div>          
         </div>
+        <div id="codeModal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Please enter the numeric code to lock/unlock the door:</p>
+            <form id="passwordForm">
+              <input type="password" id="codeInput" placeholder="Enter code">
+              <button type="submit" id="submitCode">Submit</button>
+            </form>
+          </div>
+        </div>          
         <div class="light-control">
           <div class="">
             <h2>Gas reading</h2>
@@ -139,10 +139,10 @@
         </div>  
 
       <div class="control">
-        <!-- <div>
+        <div>
           <h2>Object Detection</h2>
           <h3 id="cameraObject"></h3>
-        </div> -->
+        </div>
         <h2>Front-door camera</h2>
         <iframe  src="http://172.20.10.5:81/stream"  width="550" height="380"></iframe>
       </div>
