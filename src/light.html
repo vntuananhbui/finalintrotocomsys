@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="main.css" rel="stylesheet" >
+    <script type="module" src="index.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script>
+    <script
+        type="module"
+        src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+      ></script>
+      <script
+        nomodule
+        src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+      ></script>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="user">
+              <div class="user-avatar">
+                <p>JH</p>
+              </div>
+              <div class="user-info">
+                <h3>John Doe</h3>
+              </div>
+            </div>
+            <div class="hr"></div>
+            <ul class="menu one">
+              <li>
+                <a href="/">
+                  <ion-icon name="home-outline"></ion-icon>
+                  <span>Dashboard</span>
+                </a>
+              </li>
+              <li class="active">
+                <a href="#">
+                  <ion-icon name="sunny-outline"></ion-icon>
+                  <span>Light</span>
+                </a>
+              </li>
+              <li >
+                <a href="camera.html">
+                  <ion-icon name="videocam-outline"></ion-icon>
+                  <span>Survillance Camera</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <ion-icon name="mail-outline"></ion-icon>
+                  <span>About Us</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <ion-icon name="settings-outline"></ion-icon>
+                  <span>Settings</span>
+                </a>
+              </li>
+            </ul>
+            <div class="hr"></div>
+            <ul class="menu two">
+              <li>
+                <a href="#">
+                  <ion-icon name="help-circle-outline"></ion-icon>
+                  <span>Help</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <ion-icon name="log-out-outline"></ion-icon>
+                  <span>Logout</span>
+                </a>
+              </li>
+            </ul>
+        </div>
+        <div class="menu-container">
+            <h1>Light</h1>
+            <div class="light-control">
+                <div>
+                  <h2>Light</h2>
+                  <label class="switch">
+                    <input id="light" type="checkbox">
+                    <span id="lightUI" class="slider round"></span>
+                  </label>
+                </div>
+                <div class="lum-control">
+                    <h2>Luminosity</h2>
+                    <div id="luminosityUI" class="slidecontainer">
+                      <input type="range" min="1" max="255" value="50" class="rangeSlider" id="luminosity">
+                    </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -8,44 +8,147 @@
   <script type="module" src="index.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script>
+  <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
 </head>
 <body>
   <div id="loading" class="loading-page">
     <h1>Welcome Home</h1>
   </div>
-  <h1>Our Home</h1>
-  <h2>Light</h2>
-  <label class="switch">
-    <input id="light" type="checkbox">
-    <span id="lightUI" class="slider round"></span>
-  </label>
-  <h2>Luminosity</h2>
-  <div id="luminosityUI" class="slidecontainer">
-    <input type="range" min="1" max="255" value="50" class="rangeSlider" id="luminosity">
+  <div class="container">
+      <div class="sidebar">
+        <div class="user">
+          <div class="user-avatar">
+            <p>JH</p>
+          </div>
+          <div class="user-info">
+            <h3>John Doe</h3>
+          </div>
+        </div>
+        <div class="hr"></div>
+        <ul class="menu one">
+          <li class="active">
+            <a href="/">
+              <ion-icon name="home-outline"></ion-icon>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="light.html">
+              <ion-icon name="sunny-outline"></ion-icon>
+              <span>Light</span>
+            </a>
+          </li>
+          <li >
+            <a href="camera.html">
+              <ion-icon name="videocam-outline"></ion-icon>
+              <span>Survillance Camera</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <ion-icon name="mail-outline"></ion-icon>
+              <span>About Us</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <ion-icon name="settings-outline"></ion-icon>
+              <span>Settings</span>
+            </a>
+          </li>
+        </ul>
+        <div class="hr"></div>
+        <ul class="menu two">
+          <li>
+            <a href="#">
+              <ion-icon name="help-circle-outline"></ion-icon>
+              <span>Help</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <ion-icon name="log-out-outline"></ion-icon>
+              <span>Logout</span>
+            </a>
+          </li>
+        </ul>
+      </aside>
+      </div>
+      <div class="menu-container">
+        <h1>Dashboard</h1>
+        <div class="light-control">
+          <div>
+            <h2>Light</h2>
+            <label class="switch">
+              <input id="light" type="checkbox">
+              <span id="lightUI" class="slider round"></span>
+            </label>
+          </div>
+          <div class="lum-control">
+              <h2>Luminosity</h2>
+              <div id="luminosityUI" class="slidecontainer">
+                <input type="range" min="1" max="255" value="50" class="rangeSlider" id="luminosity">
+              </div>
+          </div>
+        </div>
+        <div class="light-control">
+            <div class="">
+              <h2>Window</h2>
+              <label id="switch" class="switch">
+                <input id="window" type="checkbox">
+                <span id="windowUI" class="slider round"></span>
+              </label>
+            </div>
+          <div class="">
+            <h2>Door lock</h2>
+            <label id="switch" class="switch">
+              <input id="lock" type="checkbox">
+              <span id="lockUI" class="slider round"></span>
+            </label>
+          </div>
+          <div id="codeModal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <p>Please enter the numeric code to lock/unlock the door:</p>
+              <form id="passwordForm">
+                <input type="password" id="codeInput" placeholder="Enter code">
+                <button type="submit" id="submitCode">Submit</button>
+              </form>
+            </div>
+          </div>          
+        </div>
+        <div class="light-control">
+          <div class="">
+            <h2>Gas reading</h2>
+            <h3 id="gas">72/50</h3>  
+          </div>
+          <div class="">
+            <h2>Water spray</h2>
+            <label id="switch" class="switch">
+              <input id="waterspray" type="checkbox">
+              <span id="watersprayUI" class="slider round"></span>
+            </label>
+          </div>
+        </div>  
+
+      <div class="control">
+        <!-- <div>
+          <h2>Object Detection</h2>
+          <h3 id="cameraObject"></h3>
+        </div> -->
+        <h2>Front-door camera</h2>
+        <iframe  src="http://172.20.10.5:81/stream"  width="550" height="380"></iframe>
+      </div>
   </div>
-  <h2>Window</h2>
-  <label id="switch" class="switch">
-    <input id="window" type="checkbox">
-    <span id="windowUI" class="slider round"></span>
-  </label>
-
-  <h2>Door lock</h2>
-  <label id="switch" class="switch">
-    <input id="lock" type="checkbox">
-    <span id="lockUI" class="slider round"></span>
-  </label>
-
-  <h2>Gas reading</h2>
-  <h3 id="gas">72/50</h3>
-
-  <h2>Water spray</h2>
-  <label id="switch" class="switch">
-    <input id="waterspray" type="checkbox">
-    <span id="watersprayUI" class="slider round"></span>
-  </label>
-
-  <h2>Front-door camera</h2>
-  <iframe  src="http://172.20.10.5:81/stream"  width="640" height="480"></iframe>
-
+  
+    <!-- </div> -->
+    
 </body>
 </html>

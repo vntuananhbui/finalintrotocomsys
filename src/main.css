@@ -1,7 +1,60 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
+:root {
+  --primary-color: rgb(0, 128, 128);
+  --accent-color: #d13254;
+  --text-color: #000000;
+  --text-color-light: #ffffff;
+  --bg-color: #fff;
+  --bg-color-light: rgb(13, 181, 181);
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+h1{
+  font-size: larger;
+}
+body {
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+.container {
+  display: flex;
+  width: 100%;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.light-sec{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+}  
+
+.menu-container{
+  gap: 10px;
+  margin-left: 50px;
+  width: 50%;
+
+}
+
+.control{
+  padding: 10px;
+}
+ .light-control{
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+ }
 /* The switch - the box around the slider */
 .switch {
   position: relative;
-  display: inline-block;
+  display: flex;
   width: 60px;
   height: 34px;
 }
@@ -39,11 +92,11 @@
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: var(--primary-color);
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px var(--primary-color);
 }
 
 input:checked + .slider:before {
@@ -64,7 +117,7 @@ input:checked + .slider:before {
 /* Range */
 .rangeSlider {
   -webkit-appearance: none;
-  width: 20%;
+  width: 150%;
   height: 15px;
   border-radius: 5px;  
   background: #d3d3d3;
@@ -88,7 +141,7 @@ input:checked + .slider:before {
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background: #04AA6D;
+  background: var(--primary-color);
   cursor: pointer;
 }
 
@@ -109,9 +162,189 @@ input:checked + .slider:before {
   justify-content: center;
   align-items: center;
   color: antiquewhite;
-  background-color: teal;
+  background-color: rgb(0, 128, 128);
   z-index: 2;
   top: 0;
   left: 0;
   overflow: hidden;
+}
+.sidebar {
+  min-width: 250px;
+  border-radius: 30px;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-color-light);
+}
+.user {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.user-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--text-color);
+}
+.user-avatar p {
+  color: var(--text-color-light);
+  font-size: 20px;
+}
+.user-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+.user-info h3 {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 2px;
+}
+.user-info p {
+  font-size: 14px;
+  color: #aaa;
+}
+.hr {
+  width: 100%;
+  height: 1.5px;
+  background-color: var(--text-color);
+  margin: 20px 0;
+  opacity: 0.2;
+}
+.sidebar .menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sidebar .menu li a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--text-color);
+  transition: all 0.3s;
+}
+.sidebar .menu li a ion-icon {
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+.sidebar .menu li.active a,
+.sidebar .menu li:hover a {
+  color: var(--primary-color);
+}
+.sidebar .menu li.active a ion-icon,
+.sidebar .menu li:hover a ion-icon {
+  color: var(--text-color-light);
+  background-color: var(--primary-color);
+}
+.sidebar .menu.one {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 95%;
+    height: 20px;
+  }
+  .sidebar .user {
+    display: none;
+  }
+  .sidebar .hr {
+    display: none;
+  }
+  .sidebar .menu.one:last-child {
+    display: none;
+  }
+  .sidebar .menu.two {
+    display: none;
+  }
+  .sidebar .menu {
+    width: 100%;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .sidebar .menu li a span {
+    display: none;
+  }
+  .sidebar .menu li a ion-icon {
+    font-size: 20px;
+  }
+}
+
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* Centering the modal */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%; /* Making the modal smaller */
+  border-radius: 10px; /* Rounded borders */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Styles for input and submit button */
+#codeInput, #submitCode {
+  margin-top: 10px;
+  width: 95%;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+#submitCode {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#submitCode:hover {
+  background-color: rgb(13, 181, 181);
 }
