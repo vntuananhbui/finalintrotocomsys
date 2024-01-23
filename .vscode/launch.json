@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/macintosh/TA-DOCUMENT/StudyZone/RMIT/2023/SEM_3_2023/Comsys/FinalAssignment/smart-home",
+      "program": "/Users/macintosh/TA-DOCUMENT/StudyZone/RMIT/2023/SEM_3_2023/Comsys/FinalAssignment/smart-home/build/Debug/outDebug"
+    }
+  ]
+}
