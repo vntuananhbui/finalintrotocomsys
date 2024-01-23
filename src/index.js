@@ -16,7 +16,7 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
 // UI Elements
-const lightCheckbox = document.getElementById('light');
+// const lightCheckbox = document.getElementById('light');
 const luminosityRange = document.getElementById('luminosity');
 const lockCheckbox = document.getElementById('lock');
 const watersprayCheckbox = document.getElementById('waterspray');
@@ -25,7 +25,7 @@ const gasReading = document.getElementById('gas');
 const cameraObject = document.getElementById('cameraObject')
 
 // UI Control Elements
-const lightUI = document.getElementById('lightUI');
+// const lightUI = document.getElementById('lightUI');
 const luminosityUI = document.getElementById('luminosityUI');
 const lockUI = document.getElementById('lockUI');
 const watersprayUI = document.getElementById('watersprayUI');
@@ -36,7 +36,7 @@ const lightref = ref(database, 'data/light');
 const windowref = ref(database, 'data/window');
 const luminosityref = ref(database, 'data/luminosity');
 const gasref = ref(database, 'data/gas');
-const watersprayref = ref(database, 'data/waterspray');
+// const watersprayref = ref(database, 'data/waterspray');
 const lockref = ref(database, 'data/lock');
 const cameraObjref = ref(database, 'data/cameraObject')
 
@@ -49,20 +49,20 @@ setTimeout(() => {
 }, 2000);
 
 // Event Handlers for UI Control Elements
-lightUI.onclick = () => set(lightref, !lightCheckbox.checked);
+// lightUI.onclick = () => set(lightref, !lightCheckbox.checked);
 luminosityRange.oninput = () => set(luminosityref, luminosityRange.value);
 windowUI.onclick = () => set(windowref, !windowCheckbox.checked);
 lockUI.onclick = toggleDoorLock; // Uses the function defined below
-watersprayUI.onclick = () => set(watersprayref, !watersprayCheckbox.checked);
+// watersprayUI.onclick = () => set(watersprayref, !watersprayCheckbox.checked);
 
 // Real-time Data Listeners
-onValue(lightref, snapshot => lightCheckbox.checked = snapshot.val());
+// onValue(lightref, snapshot => lightCheckbox.checked = snapshot.val());
 onValue(lockref, snapshot => lockCheckbox.checked = snapshot.val());
 onValue(windowref, snapshot => windowCheckbox.checked = snapshot.val());
-onValue(watersprayref, snapshot => watersprayCheckbox.checked = snapshot.val());
+// onValue(watersprayref, snapshot => watersprayCheckbox.checked = snapshot.val());
 onValue(luminosityref, snapshot => luminosityRange.value = snapshot.val());
 
-//Object dectection
+// Object dectection
 let defaultObj = 0;
 onValue(cameraObjref,(snapshot)=>{
   const data = snapshot.val();
@@ -70,7 +70,7 @@ onValue(cameraObjref,(snapshot)=>{
 
   //Alert when detect an object
   if (defaultObj == 0 && data === 1){
-    alert("An Object has been Detected");
+    alert("There's someone suspicious at the gate ");
   }
   defaultObj=data;
 });

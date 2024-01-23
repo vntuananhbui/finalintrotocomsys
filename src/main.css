@@ -348,3 +348,59 @@ input:checked + .slider:before {
 #submitCode:hover {
   background-color: rgb(13, 181, 181);
 }
+
+@media only screen and (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .menu-container {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .sidebar {
+    min-width: 100%;
+    padding: 15px;
+    position: static;
+    transform: none;
+  }
+
+  .sidebar .menu {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .sidebar .user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sidebar .menu.one {
+    display: none;
+  }
+
+  .sidebar .menu.two {
+    display: flex;
+  }
+
+  .sidebar .menu li a {
+    justify-content: center;
+  }
+
+  .menu-container h1 {
+    font-size: 20px;
+  }
+
+  .light-control {
+    flex-direction: column;
+  }
+
+  /* Adjust any other styles as needed for smaller screens */
+}
